@@ -7,6 +7,15 @@ GIT
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
 
+GIT
+  remote: git://github.com/kesha-antonov/simple_form.git
+  revision: a1561c930f3be279f3580c2510f2555f2e67a4f4
+  branch: rails-5-0
+  specs:
+    simple_form (3.2.1)
+      actionpack (> 4, < 5.1)
+      activemodel (> 4, < 5.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -55,6 +64,7 @@ GEM
     autoprefixer-rails (6.3.6.2)
       execjs
     awesome_print (1.7.0)
+    bcrypt (3.1.11)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -88,6 +98,12 @@ GEM
     concurrent-ruby (1.0.2)
     database_cleaner (1.5.3)
     debug_inspector (0.0.2)
+    devise (4.1.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 5.1)
+      responders
+      warden (~> 1.2.3)
     diff-lcs (1.2.5)
     dotenv (2.1.1)
     dotenv-rails (2.1.1)
@@ -101,6 +117,8 @@ GEM
       factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
     ffi (1.9.10)
+    font-awesome-rails (4.6.3.0)
+      railties (>= 3.2, < 5.1)
     formatador (0.2.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
@@ -152,6 +170,7 @@ GEM
     notiffany (0.1.0)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    orm_adapter (0.5.0)
     pg (0.18.4)
     pkg-config (1.1.7)
     poltergeist (1.9.0)
@@ -209,6 +228,8 @@ GEM
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
+    responders (2.2.0)
+      railties (>= 4.2.0, < 5.1)
     rspec (3.1.0)
       rspec-core (~> 3.1.0)
       rspec-expectations (~> 3.1.0)
@@ -245,9 +266,6 @@ GEM
     shellany (0.0.1)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
-    simple_form (3.2.1)
-      actionpack (> 4, < 5.1)
-      activemodel (> 4, < 5.1)
     slim (3.0.7)
       temple (~> 0.7.6)
       tilt (>= 1.3.3, < 2.1)
@@ -278,6 +296,8 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
+    warden (1.2.6)
+      rack (>= 1.0)
     web-console (3.3.0)
       activemodel (>= 4.2)
       debug_inspector
@@ -302,8 +322,10 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.1.0)
   database_cleaner
+  devise
   dotenv-rails
   factory_girl_rails
+  font-awesome-rails
   guard-rspec
   jbuilder (~> 2.0)
   jquery-rails
@@ -321,7 +343,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   selenium-webdriver
   shoulda-matchers
-  simple_form
+  simple_form!
   slim-rails
   spring
   spring-watcher-listen (~> 2.0.0)

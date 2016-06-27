@@ -6,11 +6,13 @@ gem 'puma', '~> 3.0'
 
 gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.1.0'
+gem 'devise'
+gem 'font-awesome-rails'
 gem 'jbuilder', '~> 2.0' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jquery-rails'
 gem 'kaminari', git: "git://github.com/amatsuda/kaminari.git", branch: 'master'
 gem 'sass-rails', '~> 5.0'
-gem 'simple_form'
+gem 'simple_form', github: 'kesha-antonov/simple_form', branch: 'rails-5-0'
 gem 'slim-rails' # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5.x'
 gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets

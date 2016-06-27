@@ -10,9 +10,13 @@ nav.navbar.navbar-inverse.navbar-static-top
         span.icon-bar
 
     nav.collapse.navbar-collapse#hamburger
-      / .nav.navbar-nav.navbar-left
       .nav.navbar-nav.navbar-right
         li= link_to "Home",  root_path
-        li= link_to "All", "#"
-        li= link_to "New", "#"
         li= link_to "About", about_path
+        - if user_signed_in?
+          li= link_to fa_icon("fw users", text: "Users"), "#"
+          li= link_to fa_icon("fw table", text: "Settings"), edit_user_registration_path
+          li= link_to fa_icon("fw table", text: "Log out"), destroy_user_session_path, method: :delete
+        - else
+          li= link_to "Sign up", new_user_registration_path
+          li= link_to "Log in", new_user_session_path
