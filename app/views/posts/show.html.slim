@@ -1,2 +1,10 @@
-h1 Posts#show
-p Find me in app/views/posts/show.html.slim
+= provide(:title, @post.title)
+
+.row
+  .col-sm-offset-2.col-sm-8
+    h1 
+      = @post.title
+    p
+      / | by #{@post.user.name} 
+      | at #{@post.created_at}
+    p = @post.content

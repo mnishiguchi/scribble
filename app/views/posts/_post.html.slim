@@ -1,0 +1,10 @@
+li.post[id="post-#{post.id}"]
+  h4.post_title
+    = link_to post.title, post_path(post)
+  
+  p.post_content
+    = post.content
+  
+  .controls
+    = link_to "Edit", edit_post_path(post)
+    = link_to "Delete", post, method: :delete, data: { confirm: 'Are you sure?' }

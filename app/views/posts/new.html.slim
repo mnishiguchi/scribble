@@ -1,2 +1,10 @@
-h1 Posts#new
-p Find me in app/views/posts/new.html.slim
+= provide(:title, "Add post")
+
+.row
+  .col-sm-offset-3.col-sm-6
+    h1 Add post
+    = simple_form_for(@post, html: { class: 'form-horizontal' }) do |f|
+      = f.input :title 
+      = f.input :content 
+      .form-group
+        = f.submit "Add post", class: 'btn btn-primary'

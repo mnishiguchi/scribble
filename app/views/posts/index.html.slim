@@ -1,2 +1,8 @@
-h1 Posts#index
-p Find me in app/views/posts/index.html.slim
+= provide(:title, "All posts")
+
+.row
+  .col-sm-offset-2.col-sm-8
+    h1 All posts
+    
+    .all_posts
+      = render @posts
