@@ -14,9 +14,10 @@ nav.navbar.navbar-inverse.navbar-static-top
         li= link_to "Home",  root_path
         li= link_to "About", about_path
         - if user_signed_in?
-          li= link_to fa_icon("fw users", text: "Users"), "#"
-          li= link_to fa_icon("fw table", text: "Settings"), edit_user_registration_path
-          li= link_to fa_icon("fw table", text: "Log out"), destroy_user_session_path, method: :delete
+          li= link_to fa_icon("fw sticky-note-o", text: "Posts"), posts_path
+          li= link_to fa_icon("fw pencil-square-o", text: "Add post"), new_post_path
+          li= link_to fa_icon("fw cog", text: "Settings"), edit_user_registration_path
+          li= link_to fa_icon("fw sign-out ", text: "Log out"), destroy_user_session_path, method: :delete
         - else
-          li= link_to "Sign up", new_user_registration_path
-          li= link_to "Log in", new_user_session_path
+          li= link_to fa_icon("fw sign-in ", text: "Sign up"), new_user_registration_path
+          li= link_to fa_icon("fw sign-in ", text: "Log in"), new_user_session_path

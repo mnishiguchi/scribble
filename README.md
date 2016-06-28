@@ -2,12 +2,7 @@
 
 ## Memo
 
-#### Create models and migration files (database schema)
-
-- [docs](http://guides.rubyonrails.org/command_line.html#rails-generate)
-- `rails generate model NAME [field[:type][:index] field[:type]`
-
-## Planning the database structure using ERD
+#### Planning the database structure using ERD
 
 ```
 user:
@@ -30,9 +25,21 @@ posts_tags(join table):
   - post_id
 ```
 
+#### Generate models and migration files (database schema)
+
+- [docs](http://guides.rubyonrails.org/command_line.html#rails-generate)
+- `rails generate model NAME [field[:type][:index] field[:type]`
+
 ```
-rails g model post title:string content:text
-rails g model comment content:text
+rails g model post title:string content:text user:references
+rails g model comment content:text user:references post:references
+```
+
+#### Generate controllers
+
+```
+rails g controller Posts index show new create edit update destroy
+rails g controller Comments new create
 ```
 
 ## Some gems used
