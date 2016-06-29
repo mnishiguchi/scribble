@@ -7,4 +7,20 @@
     p
       / | by #{@post.user.name} 
       | at #{@post.created_at}
-    p = @post.content
+    p 
+      = @post.content
+    
+    .add_comment
+      = link_to "Add comment", new_post_comment_path(@post), class: "btn btn-primary"
+    
+    
+    
+    .comments
+      - @post.comments.each do |comment|
+        .well
+          p
+            = comment.content
+            .controls
+              = link_to "Edit", edit_comment_path(comment.id)
+              = link_to "Delete", comment, method: :delete, data: { confirm: 'Are you sure?' }
+    
