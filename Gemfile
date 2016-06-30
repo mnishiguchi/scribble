@@ -7,6 +7,7 @@ gem 'puma', '~> 3.0'
 gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
+gem 'ffaker'
 gem 'font-awesome-rails'
 gem 'jbuilder', '~> 2.0' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jquery-rails'

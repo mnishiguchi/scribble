@@ -2,7 +2,9 @@
 
 .row
   .col-sm-offset-2.col-sm-8
-    h1 All posts
-    
+    h1 
+      | All posts ( 
+      = link_to fa_icon("plus", text: ""), new_post_path
+      |  )
     .all_posts
       = render @posts

@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: :index
+  before_action :authenticate_user!
 
   def index
     @posts = Post.all
@@ -10,19 +10,20 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = current_user.posts.build
   end
 
   def create
     # Create a post in memory based on the params.
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
 
     # Then, try to save.
     if @post.save
       flash[:info] = "Post created"
-      redirect_to @post
+      redirect_to root_url
     else
-      render :new
+      render 'static_pages/home'
+      # render :new
     end
   end
 

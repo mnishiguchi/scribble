@@ -1,7 +1,5 @@
 # Scribble
 
-## Memo
-
 #### Planning the database structure using ERD
 
 ```
@@ -42,6 +40,8 @@ rails g controller Posts index show new create edit update destroy
 rails g controller Comments new create
 ```
 
+---
+
 ## Some gems used
 
 - [devise](https://github.com/plataformatec/devise)
@@ -71,6 +71,10 @@ gem 'simple_form', github: 'kesha-antonov/simple_form', branch: 'rails-5-0'
 button.close[aria-hidden="true" data-dismiss="alert" type="button"]
   | ×
 ```
+
+#### [Create a username field in the users table](https://github.com/plataformatec/devise/wiki/How-To%3a-Allow-users-to-sign-in-using-their-username-or-email-address#create-a-username-field-in-the-users-table)
+
+---
 
 ## references
 

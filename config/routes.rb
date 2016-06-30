@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
+
   get '/home'  => 'static_pages#home'
   get '/about' => 'static_pages#about'
 
+  resources :posts, only: [:show, :new, :create]
   resources :comments, only: [:edit, :update, :destroy]
 
   resources :posts do

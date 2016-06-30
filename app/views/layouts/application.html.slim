@@ -15,6 +15,7 @@ html
   body
     = render 'layouts/site_header'
     .container
+      = render 'layouts/user_info' if current_user
       = render 'layouts/flash_message'
       main
         = yield

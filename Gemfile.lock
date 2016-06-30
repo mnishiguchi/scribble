@@ -116,6 +116,7 @@ GEM
     factory_girl_rails (4.7.0)
       factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
+    ffaker (2.2.0)
     ffi (1.9.10)
     font-awesome-rails (4.6.3.0)
       railties (>= 3.2, < 5.1)
@@ -325,6 +326,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_girl_rails
+  ffaker
   font-awesome-rails
   guard-rspec
   jbuilder (~> 2.0)
