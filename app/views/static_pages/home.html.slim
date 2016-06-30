@@ -1,11 +1,10 @@
-.jumbotron
-  h1 Scribble
-  p
-    ' Welcome to Scribble!
-    ' This is an awesome application.
-
-  = link_to "Sign up", new_user_registration_path
-  ' &nbsp;or&nbsp;
-  = link_to "Log in", new_user_session_path
-
-    
+.row
+  .col-sm-offset-1.col-sm-10
+    .jumbotron
+      h1 Scribble
+      p
+        ' Welcome to Scribble!
+        ' Please
+        = link_to "sign up", new_user_registration_path
+        ' &nbsp;or&nbsp;
+        = link_to "log in", new_user_session_path

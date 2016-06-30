@@ -1,10 +1,21 @@
 li.post[id="post-#{post.id}"]
-  h4.post_title
+  .post_meta
+    strong
+      = h(post.user.username)
+      br
+    sup.text-muted
+      | From 
+      = time_ago_in_words(post.created_at)
+      br
+  .post_title
     = link_to post.title, post_path(post)
-  
-  p.post_content
-    = post.content
-  
+  .post_content
+    = h(post.content) 
+  .tags
+    - post.tag_names.each do |tag|
+      .label.label-danger.tag 
+        = tag
+     
   .controls
     = link_to "Edit", edit_post_path(post)
     = link_to "Delete", post, method: :delete, data: { confirm: 'Are you sure?' }

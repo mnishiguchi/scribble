@@ -1,11 +1,11 @@
 require 'ffaker'
 
-# Destroy old data
+# Destroy old data.
 Comment.destroy_all
 Post.destroy_all
 User.destroy_all
 
-# Create sample users
+# Create sample users.
 masa = User.create!(
   username: "Masatoshi",
   email:    "nishiguchi.masa@gmail.com",
@@ -22,8 +22,8 @@ end
 # Create posts on a user.
 # Adds 50 sample microposts to the first 6 users.
 users = User.order(:created_at)
-20.times do
-  title = FFaker::Lorem.word
+10.times do
+  title   = FFaker::Lorem.word
   content = FFaker::Lorem.paragraph(1)
   users.each { |user| user.posts.create!(title: title, content: content) }
 end
@@ -35,8 +35,10 @@ posts = Post.all
   posts.each { |post| post.comments.create!(content: content) }
 end
 
-# Create tags on posts
-tags = %w(active_record ruby rails python php javascript angular react redux node)
+# Create tags on posts.
 posts.each do |post|
-  post.tags.create(name: tags.sample)
+  3.times do
+    name = FFaker::Lorem.word
+    post.tags.create!(name: name)
+  end
 end

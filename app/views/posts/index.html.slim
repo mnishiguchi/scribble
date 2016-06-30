@@ -1,10 +1,42 @@
 = provide(:title, "All posts")
 
 .row
-  .col-sm-offset-2.col-sm-8
+  .col-sm-offset-1.col-sm-10
     h1 
       | All posts ( 
-      = link_to fa_icon("plus", text: ""), new_post_path
+      a#add_post_toggle[href="#"]
+        = fa_icon("plus")
       |  )
+    .add_post_form
+      = render 'add_post'
+    hr
     .all_posts
       = render @posts
+
+javascript:
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var add_post_toggle = document.querySelector('#add_post_toggle')
+    var add_post_form = document.querySelector('.add_post_form')
+    
+    add_post_toggle.addEventListener("click", function(event) {
+      toggleClass(add_post_form, 'active')
+      event.preventDefault()
+    })
+    
+    function toggleClass(el, className) {
+      if (el.classList) {
+        el.classList.toggle(className)
+      } else {
+        var classes = el.className.split(' ')
+        var existingIndex = classes.indexOf(className)
+
+        if (existingIndex >= 0)
+          classes.splice(existingIndex, 1)
+        else
+          classes.push(className)
+
+        el.className = classes.join(' ')
+      }
+    }
+  })

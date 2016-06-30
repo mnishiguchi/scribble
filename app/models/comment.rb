@@ -14,5 +14,7 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :post
 
+  default_scope -> { order(:updated_at).reverse_order }
+
   validates :content, presence: true, length: { maximum: 255 }
 end

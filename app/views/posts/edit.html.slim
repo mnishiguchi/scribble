@@ -3,8 +3,10 @@
 .row
   .col-sm-offset-3.col-sm-6
     h1 Edit post
-    = simple_form_for(@post, html: { class: 'form-horizontal' }) do |f|
+    / __remote: true__ is the attribute that tells the form to be submitted via AJAX rather than by the browser’s normal submit mechanism.
+    = simple_form_for(@post, remote: true, html: { class: 'form-horizontal' }) do |f|
       = f.input :title 
-      = f.input :content 
+      = f.input :content
+      = f.input :all_tags, placeholder: "Tags separated with comma" 
       .form-group
         = f.submit "Update post", class: 'btn btn-primary'

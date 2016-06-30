@@ -1,24 +1,28 @@
 = provide(:title, @post.title)
 
 .row
-  .col-sm-offset-2.col-sm-8
+  .col-sm-offset-1.col-sm-10
     h1 
       = @post.title
     p
-      / | by #{@post.user.name} 
+      | by #{@post.user.username} 
       | at #{@post.created_at}
     p 
       = @post.content
+    .tags
+      - @post.tag_names.each do |tag|
+        .label.label-danger.tag
+          = tag
+    = link_to "Edit", edit_post_path(@post)
+    hr
     
     .add_comment
       = link_to "Add comment", new_post_comment_path(@post), class: "btn btn-primary"
-    
     .comments
       - @post.comments.each do |comment|
         .well
           p
             = comment.content
             .controls
-              = link_to "Edit", edit_comment_path(comment.id)
+              = link_to "Edit", edit_comment_path(comment)
               = link_to "Delete", comment, method: :delete, data: { confirm: 'Are you sure?' }
-    
