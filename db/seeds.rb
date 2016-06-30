@@ -29,8 +29,14 @@ users = User.order(:created_at)
 end
 
 # Create comments.
-posts = Post.all.shuffle
+posts = Post.all
 5.times do
   content = FFaker::Lorem.sentence(5)
   posts.each { |post| post.comments.create!(content: content) }
+end
+
+# Create tags on posts
+tags = %w(active_record ruby rails python php javascript angular react redux node)
+posts.each do |post|
+  post.tags.create(name: tags.sample)
 end

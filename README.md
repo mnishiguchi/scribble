@@ -33,6 +33,11 @@ rails g model post title:string content:text user:references
 rails g model comment content:text user:references post:references
 ```
 
+```
+rails g model post title:string content:text user:references
+rails g model comment content:text user:references post:references
+```
+
 #### Generate controllers
 
 ```

@@ -12,7 +12,11 @@
 
 class Post < ApplicationRecord
   belongs_to :user
+
   has_many :comments
+
+  has_many :taggings, dependent: :destroy
+  has_many :tags, through: :taggings
 
   validates :title, presence: true
   validates :content, presence: true, length: { maximum: 255 }
